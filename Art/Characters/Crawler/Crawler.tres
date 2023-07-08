@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://8wcru7aeelln"]
+
+[ext_resource type="Texture2D" uid="uid://x5e4ab30vx54" path="res://Art/Characters/Crawler/Crawler_Albedo.png" id="1_4xu3c"]
+[ext_resource type="Texture2D" uid="uid://dk4f5aq3ugobf" path="res://Art/Characters/Crawler/Crawler_AO.png" id="2_028q0"]
+[ext_resource type="Texture2D" uid="uid://r0ugadnfmo1v" path="res://Art/Characters/Crawler/Crawler_Metalness.png" id="3_3refv"]
+[ext_resource type="Texture2D" uid="uid://3atplylvm4t" path="res://Art/Characters/Crawler/Crawler_Normal.png" id="4_i0xxc"]
+[ext_resource type="Texture2D" uid="uid://bfg8j8fcs3gu4" path="res://Art/Characters/Crawler/Crawler_Roughness.png" id="5_w7wq7"]
+
+[resource]
+albedo_texture = ExtResource("1_4xu3c")
+metallic = 1.0
+metallic_texture = ExtResource("3_3refv")
+roughness_texture = ExtResource("5_w7wq7")
+normal_enabled = true
+normal_texture = ExtResource("4_i0xxc")
+ao_enabled = true
+ao_texture = ExtResource("2_028q0")

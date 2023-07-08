@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bt4yu56iomck"]
+
+[ext_resource type="PackedScene" uid="uid://0lyefqwo6an4" path="res://Art/Characters/Dinis/Dinis.fbx" id="1_catox"]
+[ext_resource type="Material" uid="uid://drjywuicpiwv5" path="res://Art/Characters/Dinis/DinisBody.tres" id="2_o4iw7"]
+[ext_resource type="Material" uid="uid://hknm4estlx2y" path="res://Art/Characters/Dinis/DinisFace.tres" id="3_e7w54"]
+
+[node name="Dinis" instance=ExtResource("1_catox")]
+
+[node name="BaseMesh_001" parent="RootNode/Dinis/Skeleton3D" index="0"]
+surface_material_override/0 = ExtResource("2_o4iw7")
+surface_material_override/1 = ExtResource("3_e7w54")
+
+[node name="DinisHair" parent="RootNode/Dinis/Skeleton3D" index="1"]
+surface_material_override/0 = ExtResource("3_e7w54")
+
+[node name="MaleJeans" parent="RootNode/Dinis/Skeleton3D" index="2"]
+surface_material_override/0 = ExtResource("2_o4iw7")
+
+[node name="DinisShoes" parent="RootNode/Dinis/Skeleton3D" index="3"]
+surface_material_override/0 = ExtResource("2_o4iw7")
+
+[node name="Jacket" parent="RootNode/Dinis/Skeleton3D" index="4"]
+surface_material_override/0 = ExtResource("2_o4iw7")

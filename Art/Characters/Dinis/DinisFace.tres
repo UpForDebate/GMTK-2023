@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://hknm4estlx2y"]
+
+[ext_resource type="Texture2D" uid="uid://djnw4monusgpo" path="res://Art/Characters/Dinis/Dinis.png" id="1_l4r1k"]
+
+[resource]
+albedo_texture = ExtResource("1_l4r1k")
