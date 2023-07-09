@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dc67vg7046bj6"]
 
-[ext_resource type="Texture2D" uid="uid://cxrd6utfac22h" path="res://icon.svg" id="1_fd17f"]
 [ext_resource type="Script" path="res://Scenes/main_menu.gd" id="1_fh04l"]
+[ext_resource type="Texture2D" uid="uid://dx80h2sy6b8or" path="res://GameCover.png" id="2_gkas4"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -12,22 +12,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_fh04l")
 
-[node name="CallToAction" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -80.0
-offset_top = 97.0
-offset_right = 86.0
-offset_bottom = 123.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Press any key to start"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(39.2949, 26.7604)
+color = Color(0, 0, 0, 1)
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -36,10 +26,27 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -174.0
-offset_right = 20.0
-offset_bottom = -134.0
+offset_left = -323.0
+offset_top = -360.0
+offset_right = 307.0
+offset_bottom = 140.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_fd17f")
+texture = ExtResource("2_gkas4")
+
+[node name="CallToAction" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -86.0
+offset_top = 140.0
+offset_right = 80.0
+offset_bottom = 166.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Press any key to start"
+horizontal_alignment = 1
+vertical_alignment = 1
