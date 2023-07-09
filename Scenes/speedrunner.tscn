@@ -11,6 +11,7 @@ height = 1.90794
 script = ExtResource("1_u11ci")
 
 [node name="Pivot" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 
 [node name="Dinis" parent="Pivot" instance=ExtResource("2_e2e07")]
 
@@ -18,8 +19,10 @@ script = ExtResource("1_u11ci")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.88544, 0)
 shape = SubResource("CapsuleShape3D_pun0o")
 
-[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-aabb = AABB(-0.197116, -0.796414, -0.206882, 0.394232, 1.59283, 0.413763)
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 
-[connection signal="screen_exited" from="VisibleOnScreenNotifier3D" to="." method="_on_visible_on_screen_notifier_3d_screen_exited"]
+[node name="NavTimer" type="Timer" parent="."]
+wait_time = 0.7
+autostart = true
+
+[connection signal="timeout" from="NavTimer" to="." method="_on_nav_timer_timeout"]

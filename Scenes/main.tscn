@@ -1,10 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://cgo68ljx6oc14"]
+[gd_scene load_steps=7 format=3 uid="uid://cgo68ljx6oc14"]
 
 [ext_resource type="Script" path="res://Scenes/main.gd" id="1_5f5ys"]
 [ext_resource type="PackedScene" uid="uid://cqgqonfqxarkf" path="res://Scenes/player.tscn" id="1_8strk"]
+[ext_resource type="PackedScene" uid="uid://tnhqkv6dewoi" path="res://Scenes/speedrunner.tscn" id="3_gyp7e"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fbinf"]
 size = Vector3(3000, 1, 3000)
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_kdtqm"]
+vertices = PackedVector3Array(-22.25, 0.5, -29.5, -29.5, 0.5, -29.5, -29.5, 0.5, -22.25, -29.5, 0.5, 22, -29.5, 0.5, 29.5, -22.25, 0.5, 29.5, 29.5, 0.5, -22.25, 29.5, 0.5, -29.5, 22, 0.5, -29.5, 22, 0.5, 29.5, 29.5, 0.5, 29.5, 29.5, 0.5, 22, -29.5, 0.5, 14.75, -29.5, 0.5, 22, -22.25, 0.5, 29.5, -14.75, 0.5, 29.5, 29.5, 0.5, -22.25, 22, 0.5, -29.5, 14.75, 0.5, -29.5, 29.5, 0.5, -14.75, -14.75, 0.5, -29.5, -22.25, 0.5, -29.5, -29.5, 0.5, -22.25, -29.5, 0.5, -14.75, 14.75, 0.5, 29.5, 22, 0.5, 29.5, 29.5, 0.5, 22, 7.25, 0.5, 29.5, 29.5, 0.5, 14.75, 29.5, 0.5, 7.25, 0, 0.5, 29.5, 14.75, 0.5, 29.5, 29.5, 0.5, 22, 29.5, 0.5, 14.75, 7.25, 0.5, 29.5, 0, 0.5, -29.5, -7.5, 0.5, -29.5, -29.5, 0.5, -7.5, -29.5, 0.5, 0, 29.5, 0.5, 0, 0, 0.5, -29.5, -29.5, 0.5, 0, -7.5, 0.5, 29.5, 0, 0.5, 29.5, 29.5, 0.5, 7.25, -29.5, 0.5, 14.75, -14.75, 0.5, 29.5, -7.5, 0.5, 29.5, -29.5, 0.5, 7.25, 29.5, 0.5, -7.5, 29.5, 0.5, -14.75, 14.75, 0.5, -29.5, 7.25, 0.5, -29.5, -7.5, 0.5, -29.5, -14.75, 0.5, -29.5, -29.5, 0.5, -14.75, -29.5, 0.5, -7.5, -29.5, 0.5, 0, -29.5, 0.5, 7.25, -7.5, 0.5, 29.5, 29.5, 0.5, -7.5, 7.25, 0.5, -29.5, 0, 0.5, -29.5, 29.5, 0.5, 0)
+polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(5, 4, 3), PackedInt32Array(8, 7, 6), PackedInt32Array(11, 10, 9), PackedInt32Array(13, 12, 14), PackedInt32Array(14, 12, 15), PackedInt32Array(17, 16, 18), PackedInt32Array(18, 16, 19), PackedInt32Array(21, 20, 22), PackedInt32Array(22, 20, 23), PackedInt32Array(26, 25, 24), PackedInt32Array(28, 27, 29), PackedInt32Array(29, 27, 30), PackedInt32Array(32, 31, 33), PackedInt32Array(33, 31, 34), PackedInt32Array(36, 35, 37), PackedInt32Array(37, 35, 38), PackedInt32Array(44, 43, 39), PackedInt32Array(39, 43, 42), PackedInt32Array(39, 42, 41), PackedInt32Array(39, 41, 40), PackedInt32Array(46, 45, 47), PackedInt32Array(47, 45, 48), PackedInt32Array(50, 49, 51), PackedInt32Array(51, 49, 52), PackedInt32Array(54, 53, 55), PackedInt32Array(55, 53, 56), PackedInt32Array(59, 58, 57), PackedInt32Array(61, 60, 62), PackedInt32Array(62, 60, 63)]
 
 [sub_resource type="BoxMesh" id="BoxMesh_3ubge"]
 size = Vector3(60, 2, 60)
@@ -18,13 +23,21 @@ script = ExtResource("1_5f5ys")
 transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0, 0, 0)
 shape = SubResource("BoxShape3D_fbinf")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
-mesh = SubResource("BoxMesh_3ubge")
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.991081, 0.13326, 0, -0.13326, 0.991081, 0, 7, 0)
 
-[node name="Environment" type="Node3D" parent="."]
+[node name="Player" parent="." groups=["player"] instance=ExtResource("1_8strk")]
 
-[node name="Player" parent="." instance=ExtResource("1_8strk")]
+[node name="Speedrunner" parent="." node_paths=PackedStringArray("transformTarget") instance=ExtResource("3_gyp7e")]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, -4.29921, 0.5, -4.20197)
+transformTarget = NodePath("../Player")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_kdtqm")
+
+[node name="Environment" type="Node3D" parent="NavigationRegion3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+mesh = SubResource("BoxMesh_3ubge")
+skeleton = NodePath("../../Ground")
